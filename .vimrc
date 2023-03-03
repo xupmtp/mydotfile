@@ -6,10 +6,11 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
-" 第三方套件
+" 第三方套件, 加入新套件執行"PlugInstall"安裝
 call plug#begin()
   " 左側顯示檔案tree
   Plug 'preservim/nerdtree'
+  Plug 'mtdl9/vim-log-highlighting'
 call plug#end()
 
 " tab改為空4格(預設8格)
@@ -21,8 +22,17 @@ set expandtab
 
 " 顯示行號
 set number
+" 設置滑鼠滾動
+set mouse=a
+
 " nerdtree 快捷鍵映射
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
+" 在版本IMproved 8.1中替換默認光標形狀
+" https://ttssh2.osdn.jp/manual/4/en/usage/tips/vim.html
+let &t_SI = "\e[5 q"
+let &t_SR = "\e[4 q"
+let &t_EI = "\e[1 q"
