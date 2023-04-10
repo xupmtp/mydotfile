@@ -10,6 +10,9 @@ endif
 call plug#begin()
   " 左側顯示檔案tree
   Plug 'preservim/nerdtree'
+  " for python3
+  Plug 'davidhalter/jedi-vim' 
+  " .log file語法高亮
   Plug 'mtdl9/vim-log-highlighting'
 call plug#end()
 
@@ -36,3 +39,6 @@ nnoremap <C-f> :NERDTreeFind<CR>
 let &t_SI = "\e[5 q"
 let &t_SR = "\e[4 q"
 let &t_EI = "\e[1 q"
+
+" python plugin要設置使用的python路徑
+let g:jedi#environment_path = "/usr/bin/python3.8"
