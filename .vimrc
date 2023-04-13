@@ -14,6 +14,8 @@ call plug#begin()
   Plug 'davidhalter/jedi-vim' 
   " .log file語法高亮
   Plug 'mtdl9/vim-log-highlighting'
+  " 中文說明文件
+  Plug 'lazywei/vim-doc-tw'
 call plug#end()
 
 " tab改為空4格(預設8格)
