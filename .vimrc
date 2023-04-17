@@ -1,9 +1,9 @@
 " =====================Vim基本設定====================
 " 設置leader鍵
 let mapleader = " "
-" tab改為空4格(預設8格)
 set clipboard=unnamed
 filetype plugin indent on
+" tab改為空4格(預設8格)
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -38,6 +38,7 @@ call plug#begin()
   Plug 'arcticicestudio/nord-vim' " 更改vim外觀
   Plug 'vim-airline/vim-airline' " 下方資訊欄
   Plug 'vim-airline/vim-airline-themes' " 下方資訊欄
+  Plug 'tpope/vim-surround' " 修改成對符號,指令:cs'[ 將'ct'修改成[ct]
 call plug#end()
 
 " =====================Vim Plugin相關設定====================
