@@ -32,6 +32,8 @@ endif
 " 第三方套件, 加入新套件執行"PlugInstall"安裝
 call plug#begin()
   Plug 'preservim/nerdtree' " 左側顯示檔案tree
+  Plug 'ryanoasis/vim-devicons' "tree 加上icon
+  Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " tree icon 加入顏色
   Plug 'davidhalter/jedi-vim' " for python3
   Plug 'mtdl9/vim-log-highlighting' " .log file語法高亮
   Plug 'lazywei/vim-doc-tw' " 中文說明文件
