@@ -1,7 +1,7 @@
 " =====================Vim基本設定====================
 " 設置leader鍵
 let mapleader = " "
-set clipboard=unnamed
+set clipboard=unnamedplus
 filetype plugin indent on
 " tab改為空4格(預設8格)
 set tabstop=4

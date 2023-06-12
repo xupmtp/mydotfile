@@ -115,5 +115,11 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# ==========alias==========
 # dot file git repository config
 alias gt='/usr/bin/git --git-dir=$HOME/mydotfile.git/ --work-tree=$HOME'
+alias mt='cd /mnt/c/Users/simon/Desktop'
+alias py='python3'
+
+# 解決zsh: no matches found錯誤
+setopt no_nomatch
