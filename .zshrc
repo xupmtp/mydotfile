@@ -117,7 +117,7 @@ source $ZSH/oh-my-zsh.sh
 
 # ==========alias==========
 # dot file git repository config
-alias gt='/usr/bin/git --git-dir=$HOME/mydotfile.git/ --work-tree=$HOME'
+alias gt="$(which git) --git-dir=$HOME/mydotfile.git/ --work-tree=$HOME"
 alias mt='cd /mnt/c/Users/simon/Desktop'
 alias py='python3'
 
