@@ -1,8 +1,10 @@
 " =====================Vim基本設定====================
 " 設置leader鍵
 let mapleader = " "
-set clipboard=unnamedplus
+" 自動按檔案類型縮進
 filetype plugin indent on
+" 複製內容會複製到剪貼簿
+set clipboard=unnamedplus
 " tab改為空4格(預設8格)
 set tabstop=4
 set shiftwidth=4
@@ -21,6 +23,10 @@ let &t_EI = "\e[1 q"
 if has("termguicolors")
     set termguicolors
 endif
+" 啟用XML,HTML tag %跳轉
+packadd! matchit
+" 全小寫時搜尋不區分大小寫, 有包含大寫時區分
+set ignorecase smartcase
 
 " =====================Vim Plugin安裝,使用plug套件管理工具====================
 " 如果沒有vim-plug會先安裝
@@ -49,7 +55,7 @@ call plug#end()
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <leader>t :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+nnoremap <C-j> :NERDTreeFind<CR>
 " 顯示隱藏檔案
 let NERDTreeShowHidden=1
 
