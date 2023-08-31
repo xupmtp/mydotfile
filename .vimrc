@@ -27,6 +27,23 @@ endif
 packadd! matchit
 " 全小寫時搜尋不區分大小寫, 有包含大寫時區分
 set ignorecase smartcase
+" 快啟.vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+" 快速重load .vimrc
+nnoremap <leader>sv :source $MYVIMRC<cr>
+" 複製函數整體(含函數名)
+nnoremap <silent> yaf [m{jV]m%y
+" 刪除時不存入寄存器
+nnoremap <leader>d "_dd
+" 插入模式下快速貼上剪貼簿內容
+inoremap <C-v> <C-r>*
+" v mode下貼上而不更新其他寄存器
+vnoremap p "_dP
+" 增加空白行不進入i mode
+nnoremap <leader>o o<esc>
+nnoremap <leader>O O<esc>
+
+
 
 " =====================Vim Plugin安裝,使用plug套件管理工具====================
 " 如果沒有vim-plug會先安裝
