@@ -123,3 +123,7 @@ alias py='python3'
 
 # 解決zsh: no matches found錯誤
 setopt no_nomatch
+
+# https://github.com/marlonrichert/zsh-autocomplete
+source ~/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+skip_global_compinit=1

@@ -1,6 +1,8 @@
-" =====================Vim基本設定====================
 " 設置leader鍵
 let mapleader = " "
+
+
+" =====================Vim基本設定====================
 " 自動按檔案類型縮進
 filetype plugin indent on
 " 複製內容會複製到剪貼簿
@@ -15,6 +17,8 @@ set number
 set mouse=a
 " 啟用光標行突出, 設置nord主題下可達到類似IDE選擇行的效果
 set cursorline
+" 移動到距離上下n行時scrollbar就會跟著移動
+set scrolloff=7
 " 在版本IMproved 8.1中替換默認光標形狀 https://ttssh2.osdn.jp/manual/4/en/usage/tips/vim.html
 let &t_SI = "\e[5 q"
 let &t_SR = "\e[4 q"
@@ -28,7 +32,7 @@ packadd! matchit
 " 全小寫時搜尋不區分大小寫, 有包含大寫時區分
 set ignorecase smartcase
 " 快啟.vimrc
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>ov :vsplit $MYVIMRC<cr>
 " 快速重load .vimrc
 nnoremap <leader>sv :source $MYVIMRC<cr>
 " 複製函數整體(含函數名)
@@ -42,6 +46,9 @@ vnoremap p "_dP
 " 增加空白行不進入i mode
 nnoremap <leader>o o<esc>
 nnoremap <leader>O O<esc>
+" 跳轉到開頭/結尾 映射成比較好按按鍵
+nnoremap H ^
+nnoremap L $
 
 
 
@@ -54,16 +61,23 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 " 第三方套件, 加入新套件執行"PlugInstall"安裝
 call plug#begin()
+  " file tree 相關
   Plug 'preservim/nerdtree' " 左側顯示檔案tree
   Plug 'ryanoasis/vim-devicons' "tree 加上icon
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " tree icon 加入顏色
+
+  " 外觀配置
+  Plug 'arcticicestudio/nord-vim' " 好看的nord color theme
+  Plug 'doums/darcula' " Jetbrain官方color theme
+  Plug 'vim-airline/vim-airline' " 下方資訊欄
+  Plug 'vim-airline/vim-airline-themes' " 下方資訊欄主題切換
+
+  " other
+  Plug 'tpope/vim-surround' " 修改成對符號,指令:cs'[ 將'ct'修改成[ct]
   Plug 'davidhalter/jedi-vim' " for python3
   Plug 'mtdl9/vim-log-highlighting' " .log file語法高亮
   Plug 'lazywei/vim-doc-tw' " 中文說明文件
-  Plug 'arcticicestudio/nord-vim' " 更改vim外觀
-  Plug 'vim-airline/vim-airline' " 下方資訊欄
-  Plug 'vim-airline/vim-airline-themes' " 下方資訊欄
-  Plug 'tpope/vim-surround' " 修改成對符號,指令:cs'[ 將'ct'修改成[ct]
+  " Plug 'tpope/vim-repeat'
 call plug#end()
 
 " =====================Vim Plugin相關設定====================
@@ -80,9 +94,10 @@ let NERDTreeShowHidden=1
 let g:jedi#environment_path = "/usr/bin/python3.8"
 
 " airline
-let g:airline_theme='nord' " 設置nord主題
+let g:airline_theme='deus' " 設置nord主題, 參考https://github.com/vim-airline/vim-airline/wiki/Screenshots
 let g:airline_powerline_fonts=1 " **字體必須設**,否則亂碼,設置前要先安裝powerline字型
 let g:airline#extensions#tabline#enabled=1 " 頂部行顯示文件資訊
 
-" nord-vim 設定主題
-colorscheme nord
+" 設定主題, 如果要設置airline=nord, 主題也必須是nord
+colorscheme darcula
+
