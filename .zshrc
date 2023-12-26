@@ -120,6 +120,11 @@ source $ZSH/oh-my-zsh.sh
 alias gt="$(which git) --git-dir=$HOME/mydotfile.git/ --work-tree=$HOME"
 alias mt='cd /mnt/c/Users/simon/Desktop'
 alias py='python3'
+alias rm='rm -r'
+alias cp='cp -r'
+alias mkdir='mkdir -p'
+alias ddg='w3m lite.duckduckgo.com' # 網頁搜尋引擎
+alias ipinfo='curl ipinfo.io'
 
 # 解決zsh: no matches found錯誤
 setopt no_nomatch

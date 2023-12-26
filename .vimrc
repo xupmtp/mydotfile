@@ -1,7 +1,6 @@
 " 設置leader鍵
 let mapleader = " "
 
-
 " =====================Vim基本設定====================
 " 自動按檔案類型縮進
 filetype plugin indent on
@@ -51,7 +50,6 @@ nnoremap H ^
 nnoremap L $
 
 
-
 " =====================Vim Plugin安裝,使用plug套件管理工具====================
 " 如果沒有vim-plug會先安裝
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -73,7 +71,7 @@ call plug#begin()
   Plug 'vim-airline/vim-airline-themes' " 下方資訊欄主題切換
 
   " other
-  Plug 'tpope/vim-surround' " 修改成對符號,指令:cs'[ 將'ct'修改成[ct]
+  Plug 'tpope/vim-surround' " 修改成對符號
   Plug 'davidhalter/jedi-vim' " for python3
   Plug 'mtdl9/vim-log-highlighting' " .log file語法高亮
   Plug 'lazywei/vim-doc-tw' " 中文說明文件
