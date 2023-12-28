@@ -48,7 +48,14 @@ nnoremap <leader>O O<esc>
 " 跳轉到開頭/結尾 映射成比較好按按鍵
 nnoremap H ^
 nnoremap L $
-
+" 整行上移一行
+nnoremap <S-C-k> :m-2<CR>==
+inoremap <S-C-k> <Esc>:m-2<CR>==gi
+vnoremap <S-C-k> :m-2<CR>==gv
+" 整行下移一行
+nnoremap <S-C-j> :m+<CR>==
+inoremap <S-C-j> <Esc>:m+<CR>==gi
+vnoremap <S-C-j> :m+<CR>==gv
 
 " =====================Vim Plugin安裝,使用plug套件管理工具====================
 " 如果沒有vim-plug會先安裝
@@ -84,8 +91,8 @@ call plug#end()
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <leader>t :NERDTreeToggle<CR>
-nnoremap <C-j> :NERDTreeFind<CR>
-" 顯示隱藏檔案
+" nnoremap <C-j> :NERDTreeFind<CR>
+" 顯示隱藏檔
 let NERDTreeShowHidden=1
 
 " python plugin要設置使用的python路徑
